@@ -17,6 +17,9 @@
       },
       "auth": {
         "amplifyapp4sabrine60c77fcb": {}
+      },
+      "storage": {
+        "s3e0d12d88": {}
       }
     }
   }

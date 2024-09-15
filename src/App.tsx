@@ -79,6 +79,14 @@ const App: React.FC<AppProps> = ({ signOut, user }) => {
         value={formState.description as string}
         placeholder="Description"
       />
+      <input
+        onChange={(event) =>
+          setFormState({ ...formState, description: event.target.value })
+        }
+        style={styles.input}
+        value={formState.description as string}
+        placeholder="Description"
+      />
       <button style={styles.button} onClick={addTodo}>
         Create Todo
       </button>
