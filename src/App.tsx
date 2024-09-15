@@ -13,7 +13,8 @@ import "@aws-amplify/ui-react/styles.css";
 
 import "./App.css";
 
-const initialState: CreateTodoInput = { name: "", description: "" };
+
+const initialState: CreateTodoInput = { name: "", description: "", image: "" };
 const client = generateClient();
 
 type AppProps = {
@@ -79,14 +80,19 @@ const App: React.FC<AppProps> = ({ signOut, user }) => {
         value={formState.description as string}
         placeholder="Description"
       />
-      <input
+
+<input
         onChange={(event) =>
-          setFormState({ ...formState, description: event.target.value })
+          setFormState({ ...formState, image: event.target.value })
         }
+        
         style={styles.input}
-        value={formState.description as string}
-        placeholder="Description"
+        value={formState.image}
+        placeholder="Entrez un URL"
+        
       />
+
+      
       <button style={styles.button} onClick={addTodo}>
         Create Todo
       </button>
@@ -94,6 +100,7 @@ const App: React.FC<AppProps> = ({ signOut, user }) => {
         <div key={todo.id ? todo.id : index} style={styles.todo}>
           <p style={styles.todoName}>{todo.name}</p>
           <p style={styles.todoDescription}>{todo.description}</p>
+          <img src="https://www.rustica.fr/images/couscous-tajine-l1200-h0.jpg" style ={styles.todoImage} alt="image" />
         </div>
       ))}
     </div>
@@ -119,6 +126,7 @@ const styles = {
   },
   todoName: { fontSize: 20, fontWeight: "bold" },
   todoDescription: { marginBottom: 0 },
+  todoImage: { width: 200 },
   button: {
     backgroundColor: "black",
     color: "white",
