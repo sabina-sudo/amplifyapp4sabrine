@@ -85,10 +85,10 @@ const App: React.FC<AppProps> = ({ signOut, user }) => {
         onChange={(event) =>
           setFormState({ ...formState, image: event.target.value })
         }
-        
+        type="file"
         style={styles.input}
         value={formState.image}
-        placeholder="Entrez un URL"
+        
         
       />
 
@@ -100,7 +100,7 @@ const App: React.FC<AppProps> = ({ signOut, user }) => {
         <div key={todo.id ? todo.id : index} style={styles.todo}>
           <p style={styles.todoName}>{todo.name}</p>
           <p style={styles.todoDescription}>{todo.description}</p>
-          <img src="https://www.rustica.fr/images/couscous-tajine-l1200-h0.jpg" style ={styles.todoImage} alt="image" />
+          <img src={todo.image} style ={styles.todoImage} alt="image" />
         </div>
       ))}
     </div>
